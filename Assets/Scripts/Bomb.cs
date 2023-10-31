@@ -10,14 +10,10 @@ public class Bomb : MonoBehaviour
             GetComponent<Collider>().enabled = false;
             FindObjectOfType<GameManager>().Explode();
 
-            Invoke("LoadScene", 5.0f);
+            
         }
     }
 
 
-    void LoadScene()
-    {
-        SceneManager.LoadScene("Result");
-    }
-
+ 
 }
