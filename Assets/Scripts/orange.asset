@@ -12,6 +12,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 934231b97a373d74ab245b7968b69b10, type: 3}
   m_Name: orange
   m_EditorClassIdentifier: 
-  whole: {fileID: 0}
-  sliced: {fileID: 0}
+  colorFrut: {r: 1, g: 0.5013487, b: 0, a: 0}
   points: 1
