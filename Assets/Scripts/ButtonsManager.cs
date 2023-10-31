@@ -17,4 +17,8 @@ public class ButtonsManager : MonoBehaviour
         Application.Quit();
         Debug.Log("Salí");
     }
+    public void Restart()
+    {
+        SceneManager.LoadScene("FruitNinja");
+    }
 }
