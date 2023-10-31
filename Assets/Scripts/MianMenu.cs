@@ -7,15 +7,14 @@ using UnityEngine;
 
 public class MianMenu : MonoBehaviour
 {
-    
-   
-
     public void HideMenu(int n)
     {
-        
         SceneManager.LoadSceneAsync(n);
     }
-    
+    public void regresar(int x)
+    {
+        SceneManager.LoadSceneAsync(x);
+    }
 
     public void Quit()
     {
