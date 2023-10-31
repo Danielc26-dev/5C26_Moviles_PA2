@@ -33,18 +33,28 @@ public class Blade : MonoBehaviour
 
     private void Update()
     {
-        if (Input.GetMouseButtonDown(0)) {
-            StartSlice();
-        } else if (Input.GetMouseButtonUp(0)) {
-            StopSlice();
-        } else if (slicing) {
-            ContinueSlice();
+        if (Input.touchCount > 0)
+        {
+            Touch touch = Input.GetTouch(0);
+
+            if (touch.phase == TouchPhase.Began)
+            {
+                StartSlice(touch.position);
+            }
+            else if (touch.phase == TouchPhase.Ended || touch.phase == TouchPhase.Canceled)
+            {
+                StopSlice();
+            }
+            else if (slicing)
+            {
+                ContinueSlice(touch.position);
+            }
         }
     }
 
-    private void StartSlice()
+    private void StartSlice(Vector2 TouchPosicion)
     {
-        Vector3 position = mainCamera.ScreenToWorldPoint(Input.mousePosition);
+        Vector3 position = mainCamera.ScreenToWorldPoint(TouchPosicion);
         position.z = 0f;
         transform.position = position;
 
@@ -61,9 +71,9 @@ public class Blade : MonoBehaviour
         sliceTrail.enabled = false;
     }
 
-    private void ContinueSlice()
+    private void ContinueSlice(Vector2 posicion)
     {
-        Vector3 newPosition = mainCamera.ScreenToWorldPoint(Input.mousePosition);
+        Vector3 newPosition = mainCamera.ScreenToWorldPoint(posicion);
         newPosition.z = 0f;
 
         direction = newPosition - transform.position;
