@@ -1,10 +1,11 @@
 using System.Collections;
+using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
 
 public class GameManager : MonoBehaviour
 {
-    public Text scoreText;
+    public TMP_Text scoreText;
     public Image fadeImage;
 
     private Blade blade;
