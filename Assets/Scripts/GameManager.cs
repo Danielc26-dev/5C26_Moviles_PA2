@@ -1,6 +1,7 @@
 using System.Collections;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 
 public class GameManager : MonoBehaviour
 {
@@ -55,6 +56,7 @@ public class GameManager : MonoBehaviour
     {
         score += points;
         scoreText.text = score.ToString();
+        PlayerPrefs.SetInt("ScoreFinal",score);
     }
 
     public void Explode()
@@ -63,6 +65,8 @@ public class GameManager : MonoBehaviour
         spawner.enabled = false;
 
         StartCoroutine(ExplodeSequence());
+
+        Invoke("LoadScene", 1.0f);
     }
 
     private IEnumerator ExplodeSequence()
@@ -98,6 +102,12 @@ public class GameManager : MonoBehaviour
 
             yield return null;
         }
+    }
+
+
+    void LoadScene()
+    {
+        SceneManager.LoadScene("Result");
     }
 
 }
