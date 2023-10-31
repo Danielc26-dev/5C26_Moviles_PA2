@@ -11,11 +11,18 @@ public class Fruit : MonoBehaviour
 
     public int points = 1;
 
+    public scriptableFrutas sf;
+
     private void Awake()
     {
         fruitRigidbody = GetComponent<Rigidbody>();
         fruitCollider = GetComponent<Collider>();
         juiceEffect = GetComponentInChildren<ParticleSystem>();
+
+        whole = sf.whole;
+        sliced = sf.sliced;
+        points = sf.points;
+
     }
 
     private void Slice(Vector3 direction, Vector3 position, float force)
