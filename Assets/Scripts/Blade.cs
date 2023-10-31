@@ -14,10 +14,6 @@ public class Blade : MonoBehaviour
 
     private bool slicing;
 
-    private Vector2 startTouch;
-    private Vector2 EndTouch;
-
-
     private void Awake()
     {
         mainCamera = Camera.main;
@@ -49,49 +45,24 @@ public class Blade : MonoBehaviour
         {
             Touch touch = Input.GetTouch(0);
 
-            Vector2 position = Camera.main.ScreenToWorldPoint(touch.position);
-            transform.position = position;
-
             if (touch.phase == TouchPhase.Began)
             {
-                startTouch = touch.position;
-
-                RaycastHit2D hit = Physics2D.Raycast(position, Vector2.zero);
-
-                if (touch.tapCount == 1)
-                {
-                    slicing = true;
-                    sliceCollider.enabled = true;
-                    sliceTrail.enabled = true;
-                    sliceTrail.Clear();
-                }
+                StartSlice(touch.position);
             }
             else if (touch.phase == TouchPhase.Moved)
             {
-                //if (currentObject != null)
-                //{
-                //    currentObject.transform.position = position;
-                //    isDrag = true;
-                //}
-                //else
-                //{
-                //    isDrag = false;
-                //}
+                ContinueSlice(touch.position);
             }
             else if (touch.phase == TouchPhase.Ended)
             {
-                EndTouch = touch.position;
-
-                slicing = false;
-                sliceCollider.enabled = false;
-                sliceTrail.enabled = false;
+                StopSlice();
             }
         }
     }
 
-    private void StartSlice()
+    private void StartSlice(Vector3 touchPosition)
     {
-        Vector3 position = mainCamera.ScreenToWorldPoint(touch.position);
+        Vector3 position = mainCamera.ScreenToWorldPoint(touchPosition);
         position.z = 0f;
         transform.position = position;
 
@@ -108,9 +79,9 @@ public class Blade : MonoBehaviour
         sliceTrail.enabled = false;
     }
 
-    private void ContinueSlice()
+    private void ContinueSlice(Vector3 touchPosition)
     {
-        Vector3 newPosition = mainCamera.ScreenToWorldPoint(touch.position);
+        Vector3 newPosition = mainCamera.ScreenToWorldPoint(touchPosition);
         newPosition.z = 0f;
 
         direction = newPosition - transform.position;
