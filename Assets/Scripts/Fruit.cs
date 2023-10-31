@@ -19,9 +19,8 @@ public class Fruit : MonoBehaviour
         fruitCollider = GetComponent<Collider>();
         juiceEffect = GetComponentInChildren<ParticleSystem>();
 
-        whole = sf.whole;
-        sliced = sf.sliced;
-        points = sf.points;
+        SpriteRenderer ren = GetComponent<SpriteRenderer>();
+        ren.color = sf.colorFrut;
 
     }
 

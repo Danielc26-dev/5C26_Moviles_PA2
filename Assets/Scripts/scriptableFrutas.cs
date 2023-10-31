@@ -4,8 +4,7 @@ using UnityEngine;
 [CreateAssetMenu(fileName = "NuevoScriptableObject", menuName = "scriptables/frutas")]
 public class scriptableFrutas : ScriptableObject
 {
-    public GameObject whole;
-    public GameObject sliced;
+    public Color colorFrut;
 
     public int points = 1;
 
