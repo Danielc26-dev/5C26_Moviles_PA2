@@ -1,4 +1,5 @@
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class Bomb : MonoBehaviour
 {
@@ -8,6 +9,7 @@ public class Bomb : MonoBehaviour
         {
             GetComponent<Collider>().enabled = false;
             FindObjectOfType<GameManager>().Explode();
+            SceneManager.LoadScene("results");
         }
     }
 

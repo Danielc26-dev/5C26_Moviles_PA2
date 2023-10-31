@@ -10,7 +10,7 @@ public class GameManager : MonoBehaviour
     private Blade blade;
     private Spawner spawner;
 
-    private int score;
+    public int score;
 
     private void Awake()
     {
