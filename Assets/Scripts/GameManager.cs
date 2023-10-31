@@ -5,8 +5,9 @@ using UnityEngine.UI;
 public class GameManager : MonoBehaviour
 {
     public Text scoreText;
+    public Text scoreText2;
     public Image fadeImage;
-
+    public scriptableObjectScore sos;
     private Blade blade;
     private Spawner spawner;
 
@@ -55,6 +56,8 @@ public class GameManager : MonoBehaviour
     {
         score += points;
         scoreText.text = score.ToString();
+        // scoreText2.text = "SCORE: " + score;
+        sos.ScriptableScore = score;
     }
 
     public void Explode()

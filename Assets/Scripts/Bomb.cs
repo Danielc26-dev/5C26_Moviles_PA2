@@ -9,7 +9,7 @@ public class Bomb : MonoBehaviour
         {
             GetComponent<Collider>().enabled = false;
             FindObjectOfType<GameManager>().Explode();
-            SceneManager.LoadScene("results");
+            SceneManager.LoadScene("results", LoadSceneMode.Additive);
         }
     }
 

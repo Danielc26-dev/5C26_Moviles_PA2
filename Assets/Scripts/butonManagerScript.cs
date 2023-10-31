@@ -20,8 +20,9 @@ public class butonManagerScript : MonoBehaviour
 
     public void irMenu()
     {
-        SceneManager.LoadScene(menu);
-
+          SceneManager.LoadScene(menu, LoadSceneMode.Additive);
+        
+        
     }
 
 
