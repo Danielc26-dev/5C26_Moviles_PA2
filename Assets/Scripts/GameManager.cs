@@ -1,6 +1,7 @@
 using System.Collections;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 
 public class GameManager : MonoBehaviour
 {
@@ -84,8 +85,6 @@ public class GameManager : MonoBehaviour
 
         yield return new WaitForSecondsRealtime(1f);
 
-        NewGame();
-
         elapsed = 0f;
 
         // Fade back in
@@ -98,6 +97,7 @@ public class GameManager : MonoBehaviour
 
             yield return null;
         }
+        SceneManager.LoadScene(0);
     }
 
 }
