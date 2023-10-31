@@ -13,4 +13,4 @@ MonoBehaviour:
   m_Name: kiwi
   m_EditorClassIdentifier: 
   colorFrut: {r: 0.14149547, g: 1, b: 0, a: 0}
-  points: 1
+  points: 5

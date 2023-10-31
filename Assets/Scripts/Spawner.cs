@@ -5,7 +5,10 @@ public class Spawner : MonoBehaviour
 {
     private Collider spawnArea;
 
-    public GameObject[] fruitPrefabs;
+   // public GameObject[] frutaBase;
+
+    public GameObject frutaBase;
+
     public GameObject bombPrefab;
     [Range(0f, 1f)] public float bombChance = 0.5f;
 
@@ -41,7 +44,7 @@ public class Spawner : MonoBehaviour
 
         while (enabled)
         {
-            GameObject prefab = fruitPrefabs[Random.Range(0, fruitPrefabs.Length)];
+            GameObject prefab = frutaBase;
 
             if (Random.value < bombChance) {
                 prefab = bombPrefab;

@@ -11,7 +11,9 @@ public class Fruit : MonoBehaviour
 
     public int points = 1;
 
-    public scriptableFrutas sf;
+    public scriptableFrutas apple;
+    public scriptableFrutas kiwi;
+
 
     private void Awake()
     {
@@ -20,7 +22,22 @@ public class Fruit : MonoBehaviour
         juiceEffect = GetComponentInChildren<ParticleSystem>();
 
         SpriteRenderer ren = GetComponent<SpriteRenderer>();
-        ren.color = sf.colorFrut;
+
+        int aleatorio = Random.Range(0, 2);
+
+        if (aleatorio == 0)
+        {
+            ren.color = apple.colorFrut;
+            points = apple.points;
+
+        }
+        else if (aleatorio == 1)
+        {
+            ren.color = kiwi.colorFrut;
+            points = kiwi.points;
+        }
+
+
 
     }
 

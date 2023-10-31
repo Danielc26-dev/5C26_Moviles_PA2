@@ -4944,7 +4944,8 @@ MonoBehaviour:
   whole: {fileID: 8763740054025600018}
   sliced: {fileID: 8763740054113742822}
   points: 1
-  sf: {fileID: 0}
+  apple: {fileID: 11400000, guid: a556c8104beba7b41b90280df32bf997, type: 2}
+  kiwi: {fileID: 11400000, guid: 6c9268a3f4f09ef409f1258c3d79ee2c, type: 2}
 --- !u!54 &3266447441071319141
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -5014,9 +5015,9 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 0
+  m_SortingOrder: 2
   m_Sprite: {fileID: 0}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_Color: {r: 1, g: 0, b: 0, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
