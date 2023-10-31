@@ -1,6 +1,7 @@
 using System.Collections;
 using TMPro;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
 public class GameManager : MonoBehaviour
@@ -12,6 +13,8 @@ public class GameManager : MonoBehaviour
     private Spawner spawner;
 
     private int score;
+
+    public PuntajeScriptableObject puntaje;
 
     private void Awake()
     {
@@ -56,6 +59,7 @@ public class GameManager : MonoBehaviour
     {
         score += points;
         scoreText.text = score.ToString();
+        puntaje.puntaje = score;
     }
 
     public void Explode()
@@ -85,7 +89,7 @@ public class GameManager : MonoBehaviour
 
         yield return new WaitForSecondsRealtime(1f);
 
-        NewGame();
+        //NewGame();
 
         elapsed = 0f;
 
@@ -99,6 +103,9 @@ public class GameManager : MonoBehaviour
 
             yield return null;
         }
+
+
+        SceneManager.LoadScene(2);
     }
 
 }

@@ -6,6 +6,12 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 1
+    path: Assets/Scenes/Menu.unity
+    guid: 2876c8c037417ad469dfebd6b2623a88
+  - enabled: 1
     path: Assets/Scenes/FruitNinja.unity
     guid: 9fc0d4010bbf28b4594072e72b8655ab
+  - enabled: 1
+    path: Assets/Scenes/Result Scene.unity
+    guid: c182225bef4e3224689acb64264896d7
   m_configObjects: {}
